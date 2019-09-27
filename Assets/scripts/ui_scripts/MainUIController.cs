@@ -6,6 +6,20 @@ using TMPro;
 
 public class MainUIController : MonoBehaviour
 {
+    #region Singleton
+    public static MainUIController instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of MainUIController found!");
+        }
+
+        instance = this;
+    }
+    #endregion
+
     [SerializeField] private GameObject inventoryScreen;
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject deathScreen;
@@ -39,9 +53,18 @@ public class MainUIController : MonoBehaviour
         infobox.CrossFadeAlpha(0.0f, timeout, false);
     }
 
-    public void InventoryScreen()
+    public void InventoryScreen(bool state)
     {
-        inventoryScreen.SetActive(!inventoryScreen.activeSelf);
+        if(!state)
+        {
+            InventoryUIController.instance.Hide();
+        }
+
+        else
+        {
+            InventoryUIController.instance.Show();
+        }
+
         MainHUD();
     }
 

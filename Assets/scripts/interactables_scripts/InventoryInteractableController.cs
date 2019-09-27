@@ -11,13 +11,11 @@ public class InventoryInteractableController : BaseInteractableItemController
 
     private void Start()
     {
-        Setup();
     }
 
     override public void OnInteract()
     {
-
-        uiController.SetText(interactionMessage[0], readTime);
+        MainUIController.instance.SetText(interactionMessage[0], readTime);
         //inventoryManager.OpenInventory(name, inventory);
     }
 

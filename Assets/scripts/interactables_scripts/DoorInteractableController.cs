@@ -26,7 +26,7 @@ public class DoorInteractableController : BaseInteractableItemController
 
         if (isLocked)
         {
-            uiController.SetText("This door is locked.");
+            MainUIController.instance.SetText("This door is locked.");
 
             return;
         }

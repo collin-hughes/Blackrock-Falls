@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    #region Singleton
+    public static GameController instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of GameController found!");
+        }
+
+        instance = this;
+    }
+    #endregion
 
     [SerializeField] private GameObject player;
 
@@ -13,7 +25,9 @@ public class GameController : MonoBehaviour
     private MainUIController uiController;
 
     public bool isPaused;
-
+    public bool pauseMenuActive;
+    public bool inventoryMenuActive;
+    public bool hudActive;
 
     //  UI Screen 0: Inventory Menu
     //  UI Screen 1: Pause Menu
@@ -22,8 +36,10 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        uiController = uiCanvas.GetComponent<MainUIController>();
         isPaused = false;
+        inventoryMenuActive = false;
+        pauseMenuActive = false;
+        hudActive = true;
 }
 
     // Update is called once per frame
@@ -31,21 +47,10 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            if(isPaused)
-            {
-                UnpauseGame();
-            }
+            inventoryMenuActive = false;
+            hudActive = false;
+            pauseMenuActive = !pauseMenuActive;
 
-            else
-            {
-                PauseGame();
-            }
-
-            uiController.PauseScreen();
-        }
-
-        else if (Input.GetButtonDown("Inventory"))
-        {
             if (isPaused)
             {
                 UnpauseGame();
@@ -56,7 +61,26 @@ public class GameController : MonoBehaviour
                 PauseGame();
             }
 
-            uiController.InventoryScreen();
+            MainUIController.instance.PauseScreen();
+        }
+
+        else if (Input.GetButtonDown("Inventory"))
+        {
+            inventoryMenuActive = !inventoryMenuActive;
+            hudActive = false;
+            pauseMenuActive = false;
+
+            if (isPaused)
+            {
+                UnpauseGame();
+            }
+
+            else
+            {
+                PauseGame();
+            }
+
+            MainUIController.instance.InventoryScreen(inventoryMenuActive);
         }
     }
 

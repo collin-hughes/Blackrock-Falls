@@ -10,7 +10,6 @@ public class CarInteractableController : BaseInteractableItemController
     void Start()
     {
         interacted = false;
-        Setup();
     }
 
     override public void OnInteract()
@@ -19,12 +18,12 @@ public class CarInteractableController : BaseInteractableItemController
         {
             interacted = true;
             headlights.SetActive(true);
-            uiController.SetText(interactionMessage[0], readTime);
+            MainUIController.instance.SetText(interactionMessage[0], readTime);
         }
 
         else
         {
-            uiController.SetText(interactionMessage[1]);
+            MainUIController.instance.SetText(interactionMessage[1]);
         }
 
     }

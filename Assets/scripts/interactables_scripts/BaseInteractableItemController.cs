@@ -12,16 +12,5 @@ public abstract class BaseInteractableItemController : MonoBehaviour
 
     protected bool interacted;
 
-    protected GameObject playerCanvas;
-
-    protected MainUIController uiController;
-
-    public void Setup()
-    {
-        playerCanvas = GameObject.Find("mainCanvas");
-        uiController = playerCanvas.GetComponent<MainUIController>();
-    }
-
-
     public abstract void OnInteract();
 }

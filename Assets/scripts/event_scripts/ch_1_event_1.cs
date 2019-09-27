@@ -9,13 +9,11 @@ public class ch_1_event_1 : BaseInteractableItemController
     private SpriteRenderer spriteRenderer;
     private void Start()
     {
-        Setup();
-
         spriteRenderer = hiddenPath.GetComponent<SpriteRenderer>();
     }
     public override void OnInteract()
     {
-        uiController.SetText(interactionMessage[0], readTime);
+        MainUIController.instance.SetText(interactionMessage[0], readTime);
 
         hiddenPath.GetComponent<BoxCollider2D>().enabled = false;
 

@@ -11,8 +11,6 @@ public abstract class TriggerBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerCanvas = GameObject.Find("mainCanvas");
-        uiController = playerCanvas.GetComponent<MainUIController>();
     }
 
     // Update is called once per frame

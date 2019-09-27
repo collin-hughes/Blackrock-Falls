@@ -8,7 +8,7 @@ public class Trigger001 : TriggerBase
     {
         if(collision.tag == "Player")
         {
-            uiController.SetText("It's going to take me too long to run and get help. They could be in danger. I should see if I can find any clues at the campsite.", 4.0f);
+            MainUIController.instance.SetText("It's going to take me too long to run and get help. They could be in danger. I should see if I can find any clues at the campsite.", 4.0f);
         }
     }
 }

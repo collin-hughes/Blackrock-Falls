@@ -7,12 +7,11 @@ public class SignInteractableController : BaseInteractableItemController
     // Start is called before the first frame update
     void Start()
     {
-        Setup();
     }
 
     // Update is called once per frame
     public override void OnInteract()
     {
-        uiController.SetText(interactionMessage[0], readTime);
+        MainUIController.instance.SetText(interactionMessage[0], readTime);
     }
 }
