@@ -58,6 +58,9 @@ TagManager:
   - name: Player
     uniqueID: 562848867
     locked: 0
+  - name: Bullets
+    uniqueID: 1436109849
+    locked: 0
   - name: Roofs
     uniqueID: 52129897
     locked: 0

@@ -4,7 +4,21 @@ using UnityEngine;
 
 public class PlayerActionController : MonoBehaviour
 {
-    [SerializeField] private GameObject raycastSource;
+    #region Singleton
+    public static PlayerActionController instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of Action found!");
+        }
+
+        instance = this;
+    }
+    #endregion
+
+    public GameObject raycastSource;
 
     private PlayerStatusController playerStatus;
 
@@ -24,7 +38,15 @@ public class PlayerActionController : MonoBehaviour
 
         if(Input.GetButtonDown("Attack"))
         {
+            try
+            {
+                PlayerInventoryController.instance.equipedWeapon.OnUse();
+            }
 
+            catch
+            {
+
+            }
         }
 
         else if(Input.GetButtonDown("Interact"))

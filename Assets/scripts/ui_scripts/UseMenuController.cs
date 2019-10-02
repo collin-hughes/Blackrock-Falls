@@ -59,12 +59,15 @@ public class UseMenuController : MonoBehaviour
     {
         if(inventorySlotController.item.equipableTag == Item.EquipableTag.weapon)
         {
+            inventorySlotController.item.OnEquip();
             PlayerInventoryController.instance.EquipWeapon(inventorySlotController);
         }
 
         else if(inventorySlotController.item.equipableTag == Item.EquipableTag.light)
         {
+            inventorySlotController.item.OnEquip();
             PlayerInventoryController.instance.EquipLight(inventorySlotController);
+            
         }
 
         HideMenu();

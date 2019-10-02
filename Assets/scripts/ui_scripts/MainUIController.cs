@@ -29,6 +29,7 @@ public class MainUIController : MonoBehaviour
 
     [SerializeField] public Slider healthBar;
     [SerializeField] public Slider staminaBar;
+    [SerializeField] public TextMeshProUGUI ammoCounter;
 
     private TextMeshProUGUI infobox;
    // private PlayerStatusController playerStatus;
@@ -82,5 +83,10 @@ public class MainUIController : MonoBehaviour
     public void UpdateStatus(Slider slider, int value, int maxValue)
     {
         slider.value = (value * 100) / maxValue;
+    }
+
+    public void UpdateAmmoCounter(int loadedAmmo, int maxAmmo)
+    {
+        ammoCounter.SetText(loadedAmmo + " / " + maxAmmo);
     }
 }

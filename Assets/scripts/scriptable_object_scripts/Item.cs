@@ -19,8 +19,16 @@ public class Item : ScriptableObject
 
     public string itemName = "New Item";
     public Sprite icon = null;
-
     public ItemTag itemTag;
     public EquipableTag equipableTag;
 
+    public virtual void OnUse()
+    {
+        Debug.Log("Using " + itemName);
+    }
+
+    public virtual void OnEquip()
+    {
+        Debug.Log("Equipping " + itemName);
+    }
 }
