@@ -10,6 +10,10 @@ public abstract class BaseInteractableItemController : MonoBehaviour
 
     [SerializeField] protected float readTime;
 
+	[SerializeField] protected int eventParent;
+
+	[SerializeField] protected int eventLinker;
+
     protected bool interacted;
 
     public abstract void OnInteract();

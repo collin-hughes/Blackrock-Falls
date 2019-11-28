@@ -21,7 +21,7 @@ public class Item : ScriptableObject
     public Sprite icon = null;
     public ItemTag itemTag;
     public EquipableTag equipableTag;
-
+	public GameObject worldItem;
     public virtual void OnUse()
     {
         Debug.Log("Using " + itemName);
@@ -31,4 +31,9 @@ public class Item : ScriptableObject
     {
         Debug.Log("Equipping " + itemName);
     }
+
+	public virtual void OnReload()
+	{
+		Debug.Log("Reloading");
+	}
 }

@@ -22,12 +22,17 @@ public class UseMenuController : MonoBehaviour
         HideMenu();
     }
 
-    public void ShowMenu()
+	private void Update()
+	{
+		
+	}
+
+	public void ShowMenu()
     {
         canvasGroup.alpha = 1;
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
-        canvasGroup.ignoreParentGroups = true;
+        canvasGroup.ignoreParentGroups = false;
 
         StartCoroutine(Timeout());
     }
@@ -42,7 +47,7 @@ public class UseMenuController : MonoBehaviour
 
     IEnumerator Timeout()
     {
-        timeout = 5;
+        timeout = 1;
         counter = 0;
 
         while(counter < timeout)
@@ -72,4 +77,20 @@ public class UseMenuController : MonoBehaviour
 
         HideMenu();
     }
+
+	public void UnEquip()
+	{
+		Debug.Log("Unequiping");
+	}
+
+	public void Drop()
+	{
+		Vector3 currentPosition = GameObject.Find("player").transform.position;
+
+		GameObject droppedItem = Instantiate(inventorySlotController.item.worldItem, currentPosition, new Quaternion(), GameObject.Find("items").transform);
+
+		PlayerInventoryController.instance.Remove(inventorySlotController.item);
+
+		HideMenu();
+	}
 }

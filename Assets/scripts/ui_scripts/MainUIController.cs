@@ -30,8 +30,9 @@ public class MainUIController : MonoBehaviour
     [SerializeField] public Slider healthBar;
     [SerializeField] public Slider staminaBar;
     [SerializeField] public TextMeshProUGUI ammoCounter;
+	[SerializeField] public TextMeshProUGUI taskList;
 
-    private TextMeshProUGUI infobox;
+	private TextMeshProUGUI infobox;
    // private PlayerStatusController playerStatus;
 
     // Start is called before the first frame update
@@ -82,11 +83,14 @@ public class MainUIController : MonoBehaviour
 
     public void UpdateStatus(Slider slider, int value, int maxValue)
     {
-        slider.value = (value * 100) / maxValue;
+        slider.value = ((float)value / (float)maxValue) * 100;
     }
 
     public void UpdateAmmoCounter(int loadedAmmo, int maxAmmo)
     {
         ammoCounter.SetText(loadedAmmo + " / " + maxAmmo);
     }
+
+	
+
 }

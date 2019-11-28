@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9036196141147379506}
   - component: {fileID: 8534798473985777798}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: tent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,6 +125,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tentPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 457457267497185999, guid: 488020d91557d6648aa0e5105c715391,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 343909443306005474, guid: 488020d91557d6648aa0e5105c715391,
         type: 3}

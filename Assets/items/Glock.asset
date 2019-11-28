@@ -14,11 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEquiped: 0
   isDefaultItem: 0
-  itemName: Glock
+  itemName: Glock 17
   icon: {fileID: 21300000, guid: cfbe0154183c9fe44937ce6ef8c16688, type: 3}
   itemTag: 1
   equipableTag: 0
-  damage: 10
+  worldItem: {fileID: 4852964640916228825, guid: df42e1ab3ea7a55498b5e206718aebc9,
+    type: 3}
+  weaponType: 0
+  damage: 20
   magazineSize: 15
-  loadedRound: 15
+  range: 10
   bullet: {fileID: 1051411550441708682, guid: b4677fce2ec1d0444bf97ed5eb38dd3f, type: 3}
+  muzzleFlash: {fileID: 684612723298914848, guid: 18696f538e61dd24c92aa80a128fe6c5,
+    type: 3}

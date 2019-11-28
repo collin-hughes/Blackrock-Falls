@@ -23,15 +23,19 @@ public class PlayerMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerStatus.isSprinting)
-        {
-            moveInput = new Vector2(Input.GetAxisRaw("Horizontal") * sprintSpeed, Input.GetAxisRaw("Vertical") * sprintSpeed);
-        }
+		if (GameState.playing == GameController.instance.GetCurrentState())
+		{
+			if (playerStatus.isSprinting)
+			{
+				moveInput = new Vector2(Input.GetAxisRaw("Horizontal") * sprintSpeed * Time.deltaTime, Input.GetAxisRaw("Vertical") * sprintSpeed * Time.deltaTime);
+			}
 
-        else
-        {
-            moveInput = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, Input.GetAxisRaw("Vertical") * moveSpeed);
-        }
+			else
+			{
+				moveInput = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime);
+			}
+		}
+			
     }
 
     private void FixedUpdate()

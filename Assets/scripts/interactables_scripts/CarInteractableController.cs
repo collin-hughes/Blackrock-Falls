@@ -14,17 +14,25 @@ public class CarInteractableController : BaseInteractableItemController
 
     override public void OnInteract()
     {
-        if(!interacted)
-        {
-            interacted = true;
-            headlights.SetActive(true);
-            MainUIController.instance.SetText(interactionMessage[0], readTime);
-        }
+		if (eventParent > -1 && EventController.instance.events[eventParent].GetCompleted())
+		{
+			if (!interacted)
+			{
+				EventController.instance.events[eventLinker].SetCompleted();
+				interacted = true;
+				headlights.SetActive(true);
+				MainUIController.instance.SetText(interactionMessage[0], readTime);
+			}
 
-        else
-        {
-            MainUIController.instance.SetText(interactionMessage[1]);
-        }
+			else
+			{
+				MainUIController.instance.SetText(interactionMessage[1]);
+			}
+		}
 
+		else
+		{
+			MainUIController.instance.SetText(interactionMessage[2]);
+		}
     }
 }

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a93c42086bb0ea44fb88ff88485828ac, type: 3}
+  m_Name: Shotgun
+  m_EditorClassIdentifier: 
+  isEquiped: 0
+  isDefaultItem: 0
+  itemName: Shotgun
+  icon: {fileID: 21300000, guid: 0bec24afcec57c14a88ad2494b0a0b24, type: 3}
+  itemTag: 1
+  equipableTag: 0
+  worldItem: {fileID: 6564409546852969368, guid: 23b9c644354558f49af086aa216af3f5,
+    type: 3}
+  weaponType: 1
+  damage: 30
+  magazineSize: 8
+  range: 5
+  bullet: {fileID: 1051411550441708682, guid: b4677fce2ec1d0444bf97ed5eb38dd3f, type: 3}
+  muzzleFlash: {fileID: 684612723298914848, guid: 18696f538e61dd24c92aa80a128fe6c5,
+    type: 3}

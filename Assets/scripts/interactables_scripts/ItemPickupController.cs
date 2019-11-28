@@ -29,6 +29,11 @@ public class ItemPickupController : BaseInteractableItemController
         MainUIController.instance.SetText(interactionMessage[0], readTime);
         wasPickedUp = PlayerInventoryController.instance.Add(item);
 
+		if(eventLinker > -1)
+		{
+			EventController.instance.events[eventLinker].SetCompleted();
+		}
+
         if(wasPickedUp)
         {
             Destroy(gameObject);

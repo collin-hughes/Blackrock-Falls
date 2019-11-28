@@ -41,6 +41,8 @@ MonoBehaviour:
   name: 
   interactionMessage: []
   readTime: 0
+  eventParent: 0
+  eventLinker: 0
   isLocked: 0
   doorID: 0
   openDoor: {fileID: 5053729513333698484}
@@ -56,7 +58,7 @@ GameObject:
   - component: {fileID: 6248663541300364707}
   - component: {fileID: 6803030159738863428}
   - component: {fileID: 1932577447059121097}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: outhouse_interactble
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -119,6 +121,8 @@ MonoBehaviour:
   interactionMessage:
   - The hole is dark and deep, but I can't see anything down there.
   readTime: 4
+  eventParent: 0
+  eventLinker: 0
 --- !u!1 &4074658699598611311
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5534136158981511580}
   - component: {fileID: 5289080427974695775}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: outhouse_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,6 +244,8 @@ MonoBehaviour:
   name: 
   interactionMessage: []
   readTime: 0
+  eventParent: 0
+  eventLinker: 0
   isLocked: 0
   doorID: 0
   openDoor: {fileID: 1314377528802925964}
@@ -259,7 +265,7 @@ GameObject:
   - component: {fileID: 7785252446257347149}
   - component: {fileID: 1056646876861467189}
   - component: {fileID: 3759635785484193695}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: outhouse_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7785252446794009331}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: outhousePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7785252447512352226}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: outhouse_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7785252447784546277}
   - component: {fileID: 7785252447784546276}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: outhouse_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +621,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4563041544061571224}
   - component: {fileID: 783761017206019734}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: outhouse_roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}

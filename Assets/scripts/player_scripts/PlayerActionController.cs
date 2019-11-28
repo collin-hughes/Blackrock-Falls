@@ -20,6 +20,10 @@ public class PlayerActionController : MonoBehaviour
 
     public GameObject raycastSource;
 
+	[SerializeField] private float useDistance;
+	[SerializeField] private LayerMask interactableMask;
+
+
     private PlayerStatusController playerStatus;
 
     // Start is called before the first frame update
@@ -31,37 +35,51 @@ public class PlayerActionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButton("Sprint"))
-        {
+		if (GameState.playing == GameController.instance.GetCurrentState())
+		{
+			if (Input.GetButton("Sprint"))
+			{
 
-        }
+			}
 
-        if(Input.GetButtonDown("Attack"))
-        {
-            try
-            {
-                PlayerInventoryController.instance.equipedWeapon.OnUse();
-            }
+			if (Input.GetButtonDown("Attack"))
+			{
+				try
+				{
+					PlayerInventoryController.instance.equipedWeapon.OnUse();
+				}
 
-            catch
-            {
+				catch
+				{
 
-            }
-        }
+				}
+			}
 
-        else if(Input.GetButtonDown("Interact"))
-        {
-            Interact();
-        }
+			else if (Input.GetButtonDown("Reload"))
+			{
+				try
+				{
+					PlayerInventoryController.instance.equipedWeapon.OnReload();
+				}
 
-        
-    }
+				catch
+				{
+
+				}
+			}
+
+			else if (Input.GetButtonDown("Interact"))
+			{
+				Interact();
+			}
+		}
+	}
 
     void Interact()
     {
         RaycastHit2D interactRay;
 
-        if (interactRay = Physics2D.Raycast(raycastSource.transform.position, raycastSource.transform.up, .5f))
+        if (interactRay = Physics2D.Raycast(raycastSource.transform.position, raycastSource.transform.up, useDistance, interactableMask))
         {
             if (interactRay.transform.tag == "Interactable")
             {

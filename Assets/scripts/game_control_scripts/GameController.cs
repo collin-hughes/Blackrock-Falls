@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GameState
+{
+	playing, paused
+}
+
 public class GameController : MonoBehaviour
 {
+
+
     #region Singleton
     public static GameController instance;
 
@@ -24,6 +31,8 @@ public class GameController : MonoBehaviour
 
     private MainUIController uiController;
 
+	private GameState currentState;
+
     public bool isPaused;
     public bool pauseMenuActive;
     public bool inventoryMenuActive;
@@ -40,6 +49,7 @@ public class GameController : MonoBehaviour
         inventoryMenuActive = false;
         pauseMenuActive = false;
         hudActive = true;
+		currentState = GameState.playing;
 }
 
     // Update is called once per frame
@@ -49,17 +59,19 @@ public class GameController : MonoBehaviour
         {
             inventoryMenuActive = false;
             hudActive = false;
-            pauseMenuActive = !pauseMenuActive;
+            //pauseMenuActive = !pauseMenuActive;
 
             if (isPaused)
             {
                 UnpauseGame();
+
             }
 
             else
             {
                 PauseGame();
-            }
+				currentState = GameState.playing;
+			}
 
             MainUIController.instance.PauseScreen();
         }
@@ -84,15 +96,22 @@ public class GameController : MonoBehaviour
         }
     }
 
+	public GameState GetCurrentState()
+	{
+		return currentState;
+	}
+
     private void PauseGame()
     {
         Time.timeScale = 0.0f;
         isPaused = true;
-    }
+		currentState = GameState.paused;
+	}
 
     private void UnpauseGame()
     {
         Time.timeScale = 1.0f;
         isPaused = false;
+		currentState = GameState.playing;
     }
 }

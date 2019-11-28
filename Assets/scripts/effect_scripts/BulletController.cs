@@ -20,11 +20,13 @@ public class BulletController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb2d.MovePosition(transform.position + transform.up * moveSpeed);
+		rb2d.MovePosition(transform.position + transform.up * moveSpeed);
+		//rb2d.MovePosition(transform.position + transform.TransformDirection(transform.up));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+		//Debug.Log(collision.transform.name);
         Destroy(gameObject);
     }
 }
