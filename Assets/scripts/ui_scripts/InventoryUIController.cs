@@ -36,6 +36,8 @@ public class InventoryUIController : MonoBehaviour
         inventoryGroup = GetComponent<CanvasGroup>();
 
         slots = itemSlotParent.GetComponentsInChildren<InventoryButtonController>();
+
+		UpdateUI();
     }
 
     // Update is called once per frame

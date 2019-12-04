@@ -9,16 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 624e2c75c0e448146a2eddfbc22c7e8b, type: 3}
-  m_Name: Pocket Knife
+  m_Script: {fileID: 11500000, guid: d6f9b4ac8506b6a4798243e37d048c5d, type: 3}
+  m_Name: Lighter
   m_EditorClassIdentifier: 
   isEquiped: 0
   isDefaultItem: 0
-  itemName: Pocket Knife
-  icon: {fileID: 21300000, guid: 9c4cf05fc7cfeea408933e05211d9993, type: 3}
+  itemName: Lighter
+  icon: {fileID: 21300000, guid: caa3b29f9022ca64b8e7fb1ccc241afa, type: 3}
   itemTag: 1
-  equipableTag: 0
-  worldItem: {fileID: 4852964640916228825, guid: a5c133f70d14ddb4480022ea17a1ed85,
+  equipableTag: 1
+  worldItem: {fileID: 1917741904395363495, guid: 62abeab0876f4ec41b0b5beccc8669bd,
     type: 3}
-  damage: 10
-  range: 0.5
+  intensityModifier: 1.5

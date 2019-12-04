@@ -91,7 +91,7 @@ public class PlayerInventoryController : MonoBehaviour
 
         Remove(slot.item);
 
-        equipedLight = slot.item;
+        //equipedLight = slot.item;
 
         if (equipedLight != null)
         {

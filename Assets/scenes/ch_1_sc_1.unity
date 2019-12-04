@@ -4123,6 +4123,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8559462201907936831, guid: 3de02e04d03e9484db7c855d14b92897,
+        type: 3}
+      propertyPath: equipedWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 73b59d0784c39fa40a7e1624517dee9a,
+        type: 2}
+    - target: {fileID: 8559462201907936831, guid: 3de02e04d03e9484db7c855d14b92897,
+        type: 3}
+      propertyPath: equipedLight
+      value: 
+      objectReference: {fileID: 11400000, guid: 174ddb7f1c828c540b4f699ce9a0faa4,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3de02e04d03e9484db7c855d14b92897, type: 3}
 --- !u!1 &1449857786

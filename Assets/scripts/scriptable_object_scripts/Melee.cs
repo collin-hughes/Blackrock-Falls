@@ -6,7 +6,7 @@ using UnityEngine;
 public class Melee : Item
 {
 	public int damage;
-	public int range;
+	public float range;
 
 	private int layerMask = 1<<14;
 
