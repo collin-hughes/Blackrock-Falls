@@ -26,7 +26,7 @@ public class Firearm : Item
 
 	public override void OnUse()
     {
-		LineRenderer newBullet;
+		LineRenderer[] newBullet = new LineRenderer[3];
 
 		RaycastHit2D[] fireArray = new RaycastHit2D[3];
 
@@ -45,7 +45,7 @@ public class Firearm : Item
 
 						MainUIController.instance.UpdateAmmoCounter(loadedRound, magazineSize);
 
-						newBullet = Instantiate(bullet, PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.transform.rotation);
+						newBullet[0] = Instantiate(bullet, PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.transform.rotation);
 						fireArray[0] = Physics2D.Raycast(PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.raycastSource.transform.up, range, layerMask);
 						Debug.DrawRay(PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.raycastSource.transform.up * 5);
 
@@ -70,15 +70,15 @@ public class Firearm : Item
 
 						MainUIController.instance.UpdateAmmoCounter(loadedRound, magazineSize);
 
-						newBullet = Instantiate(bullet, PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.transform.rotation * Quaternion.Euler(0f, 0f, 5f));
+						newBullet[0] = Instantiate(bullet, PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.transform.rotation * Quaternion.Euler(0f, 0f, 5f));
 						fireArray[0] = Physics2D.Raycast(PlayerActionController.instance.raycastSource.transform.position, Quaternion.AngleAxis(5f, PlayerActionController.instance.raycastSource.transform.forward) * PlayerActionController.instance.raycastSource.transform.up, range, layerMask);
 						Debug.DrawRay(PlayerActionController.instance.raycastSource.transform.position, Quaternion.AngleAxis(5f, PlayerActionController.instance.raycastSource.transform.forward) * PlayerActionController.instance.raycastSource.transform.up * 5);
 
-						newBullet = Instantiate(bullet, PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.transform.rotation);
+						newBullet[1] = Instantiate(bullet, PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.transform.rotation);
 						fireArray[1] = Physics2D.Raycast(PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.raycastSource.transform.up, range, layerMask);
 						Debug.DrawRay(PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.raycastSource.transform.up * 5);
 
-						newBullet = Instantiate(bullet, PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.transform.rotation * Quaternion.Euler(0f, 0f, -5f));
+						newBullet[2] = Instantiate(bullet, PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.transform.rotation * Quaternion.Euler(0f, 0f, -5f));
 						fireArray[2] = Physics2D.Raycast(PlayerActionController.instance.raycastSource.transform.position, Quaternion.AngleAxis(-5f, PlayerActionController.instance.raycastSource.transform.forward) * PlayerActionController.instance.raycastSource.transform.up, range, layerMask);
 						Debug.DrawRay(PlayerActionController.instance.raycastSource.transform.position, Quaternion.AngleAxis(-5f, PlayerActionController.instance.raycastSource.transform.forward) * PlayerActionController.instance.raycastSource.transform.up * 5);
 
@@ -87,6 +87,7 @@ public class Firearm : Item
 							if (fireArray[i])
 							{
 								Debug.Log("Bullet " + i + " hit " + fireArray[i].transform.name);
+								Destroy(newBullet[i]);
 								fireArray[i].transform.gameObject.GetComponent<EnemyStatusController>().TakeDamage(damage, fireArray[i]);
 								//Instantiate(fireArray[i].transform.gameObject.GetComponent<EnemyStatusController>().blood, fireArray[i].point, Quaternion.LookRotation(new Vector2(fireArray[i].point.x - PlayerActionController.instance.raycastSource.transform.position.x,
 								//																																					fireArray[i].point.y - PlayerActionController.instance.raycastSource.transform.position.y)));

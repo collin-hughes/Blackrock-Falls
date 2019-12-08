@@ -47,6 +47,11 @@ public class MainUIController : MonoBehaviour
     {
         
     }
+	
+	public void UpdateTask(string text)
+	{
+		taskList.SetText(text);
+	}
 
     public void SetText(string text, float timeout=3.0f)
     {

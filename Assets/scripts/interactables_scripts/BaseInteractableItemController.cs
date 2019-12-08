@@ -14,6 +14,8 @@ public abstract class BaseInteractableItemController : MonoBehaviour
 
 	[SerializeField] protected int eventLinker;
 
+	[SerializeField] protected string newTaskName;
+
     protected bool interacted;
 
     public abstract void OnInteract();

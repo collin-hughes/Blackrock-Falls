@@ -69,10 +69,11 @@
     <Compile Include="Assets\scripts\enemy_scripts\EnemyMoveController.cs" />
     <Compile Include="Assets\scripts\enemy_scripts\EnemyStatusController.cs" />
     <Compile Include="Assets\scripts\event_scripts\ch_1_event_2.cs" />
+    <Compile Include="Assets\scripts\game_control_scripts\AudioController.cs" />
     <Compile Include="Assets\scripts\game_control_scripts\EventController.cs" />
     <Compile Include="Assets\scripts\game_control_scripts\GameController.cs" />
     <Compile Include="Assets\scripts\game_control_scripts\LoadingController.cs" />
-    <Compile Include="Assets\scripts\game_control_scripts\MusicController.cs" />
+    <Compile Include="Assets\scripts\game_control_scripts\OptionMenuController.cs" />
     <Compile Include="Assets\scripts\interactables_scripts\BaseInteractableItemController.cs" />
     <Compile Include="Assets\scripts\interactables_scripts\CampfireInteractableController.cs" />
     <Compile Include="Assets\scripts\interactables_scripts\CarInteractableController.cs" />

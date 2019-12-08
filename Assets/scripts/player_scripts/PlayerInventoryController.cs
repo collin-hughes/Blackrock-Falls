@@ -15,7 +15,8 @@ public class PlayerInventoryController : MonoBehaviour
         }
 
         instance = this;
-    }
+		DontDestroyOnLoad(this);
+	}
     #endregion
 
     public delegate void OnItemChanged();

@@ -1639,7 +1639,7 @@ PrefabInstance:
     - target: {fileID: 2102619625342263246, guid: 8b8c28de1940cc3499bb3a1e5e9ec87f,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2102619625342263246, guid: 8b8c28de1940cc3499bb3a1e5e9ec87f,
         type: 3}
@@ -1649,17 +1649,22 @@ PrefabInstance:
     - target: {fileID: 2102619625342263246, guid: 8b8c28de1940cc3499bb3a1e5e9ec87f,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2102619625342263246, guid: 8b8c28de1940cc3499bb3a1e5e9ec87f,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2102619625342263246, guid: 8b8c28de1940cc3499bb3a1e5e9ec87f,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102619625342263246, guid: 8b8c28de1940cc3499bb3a1e5e9ec87f,
+        type: 3}
+      propertyPath: m_text
+      value: Task
       objectReference: {fileID: 0}
     - target: {fileID: 3924982844615014810, guid: 8b8c28de1940cc3499bb3a1e5e9ec87f,
         type: 3}
@@ -2726,6 +2731,36 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2102619625628597879, guid: 8b8c28de1940cc3499bb3a1e5e9ec87f,
+        type: 3}
+      propertyPath: m_text
+      value: Find a flashlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102619625628597879, guid: 8b8c28de1940cc3499bb3a1e5e9ec87f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102619625628597879, guid: 8b8c28de1940cc3499bb3a1e5e9ec87f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102619625628597879, guid: 8b8c28de1940cc3499bb3a1e5e9ec87f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102619625628597879, guid: 8b8c28de1940cc3499bb3a1e5e9ec87f,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102619625628597879, guid: 8b8c28de1940cc3499bb3a1e5e9ec87f,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b8c28de1940cc3499bb3a1e5e9ec87f, type: 3}
 --- !u!1 &130387282
@@ -2962,6 +2997,7 @@ MonoBehaviour:
   readTime: 5
   eventParent: 1
   eventLinker: 2
+  newTaskName: Follow the path
   hiddenPath: {fileID: 1449857786}
 --- !u!61 &268194955
 BoxCollider2D:
@@ -3626,6 +3662,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7737830970344254460, guid: 9aaf2b3251a6d524a917050731c0c270,
         type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737830970344254460, guid: 9aaf2b3251a6d524a917050731c0c270,
+        type: 3}
       propertyPath: m_Intensity
       value: 1
       objectReference: {fileID: 0}
@@ -3633,6 +3674,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AlphaBlendOnOverlap
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737830970344254460, guid: 9aaf2b3251a6d524a917050731c0c270,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[7]
+      value: 305296585
       objectReference: {fileID: 0}
     - target: {fileID: 2099950665259729784, guid: 9aaf2b3251a6d524a917050731c0c270,
         type: 3}
@@ -5522,6 +5568,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1917741904395363488, guid: 10111903e92be694a8243f6354f8c960,
+        type: 3}
+      propertyPath: newTaskName
+      value: Get in the car
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10111903e92be694a8243f6354f8c960, type: 3}
 --- !u!1001 &4535086574637653275
@@ -5599,8 +5650,9 @@ PrefabInstance:
     - target: {fileID: 4416473113112720929, guid: 1b3bcbc14d36efb419767c4767b733e5,
         type: 3}
       propertyPath: interactionMessage.Array.data[0]
-      value: The car won't start, but there's enough juice in the battery to turn
-        the headlights on. What's that on the ground?
+      value: "The car won\u2019t start, but there\u2019s enough juice in the battery
+        to turn on the headlights. But what is that? It looks like blood. It must
+        belong to one of the guys. I should check it out."
       objectReference: {fileID: 0}
     - target: {fileID: 4416473113112720929, guid: 1b3bcbc14d36efb419767c4767b733e5,
         type: 3}
@@ -5610,7 +5662,7 @@ PrefabInstance:
     - target: {fileID: 4416473113112720929, guid: 1b3bcbc14d36efb419767c4767b733e5,
         type: 3}
       propertyPath: readTime
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4416473113112720929, guid: 1b3bcbc14d36efb419767c4767b733e5,
         type: 3}
@@ -5621,6 +5673,11 @@ PrefabInstance:
         type: 3}
       propertyPath: interactionMessage.Array.data[2]
       value: I really need to find a flashlight before I do anything else.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416473113112720929, guid: 1b3bcbc14d36efb419767c4767b733e5,
+        type: 3}
+      propertyPath: newTaskName
+      value: Examine the blood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b3bcbc14d36efb419767c4767b733e5, type: 3}

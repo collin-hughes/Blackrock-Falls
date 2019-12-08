@@ -111,6 +111,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Campfire
   interactionMessage: []
+  readTime: 0
+  eventParent: 0
+  eventLinker: 0
 --- !u!1 &8273564322857571159
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +233,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0.708266, b: 0, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 0000000011d7f1951bb6d7f80f8a2c6d63648c219fa7f57201c8299f
+  m_ApplyToSortingLayers: 0000000011d7f1951bb6d7f80f8a2c6d63648c219fa7f57201c8299fc9743212
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0

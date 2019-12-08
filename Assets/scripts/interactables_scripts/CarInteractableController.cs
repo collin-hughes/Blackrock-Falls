@@ -22,6 +22,7 @@ public class CarInteractableController : BaseInteractableItemController
 				interacted = true;
 				headlights.SetActive(true);
 				MainUIController.instance.SetText(interactionMessage[0], readTime);
+				MainUIController.instance.UpdateTask(newTaskName);
 			}
 
 			else

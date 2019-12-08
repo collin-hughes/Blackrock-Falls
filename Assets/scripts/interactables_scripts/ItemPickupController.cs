@@ -32,6 +32,7 @@ public class ItemPickupController : BaseInteractableItemController
 		if(eventLinker > -1)
 		{
 			EventController.instance.events[eventLinker].SetCompleted();
+			MainUIController.instance.UpdateTask(newTaskName);
 		}
 
         if(wasPickedUp)

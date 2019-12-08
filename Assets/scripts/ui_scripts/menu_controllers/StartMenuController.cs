@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Studio110Utils;
 
 public class StartMenuController : MonoBehaviour
 {
+	[SerializeField] private GameObject startMenu;
 	[SerializeField] private GameObject optionsMenu;
 
 	public void ContinueGame()
@@ -29,7 +31,8 @@ public class StartMenuController : MonoBehaviour
 
 	public void Options()
 	{
-		Debug.Log("Opening Options"); 
+		UIUtilites.TogglePanels(ref startMenu, ref optionsMenu);
+		optionsMenu.GetComponent<OptionMenuController>().OnActivate();
 	}
 
 	public void QuitGame()

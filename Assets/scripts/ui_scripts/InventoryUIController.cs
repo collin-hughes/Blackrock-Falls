@@ -13,7 +13,8 @@ public class InventoryUIController : MonoBehaviour
         }
 
         instance = this;
-    }
+		DontDestroyOnLoad(this);
+	}
     #endregion
 
     public Transform itemSlotParent;
