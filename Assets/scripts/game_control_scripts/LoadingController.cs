@@ -23,9 +23,13 @@ public class LoadingController : MonoBehaviour
 	[SerializeField] private GameObject HUD;
 	[SerializeField] private GameObject LoadScreen;
 
+	[SerializeField] private AudioClip loadingMusic;
+
     public void LoadScene(int sceneIndex)
 	{
 		Studio110Utils.UIUtilites.TogglePanels(ref HUD, ref LoadScreen);
+
+		AudioController.instance.PlayMusic(loadingMusic);
 
 		StartCoroutine(LoadAsync(sceneIndex));
 	}

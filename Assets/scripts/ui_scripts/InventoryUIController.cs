@@ -23,6 +23,8 @@ public class InventoryUIController : MonoBehaviour
 
     [SerializeField] InventoryButtonController equipedWeapon;
     [SerializeField] InventoryButtonController equipedLight;
+	[SerializeField] AudioClip[] soundFX = new AudioClip[2];
+
 
     PlayerInventoryController inventory;
 
@@ -90,6 +92,7 @@ public class InventoryUIController : MonoBehaviour
         inventoryGroup.alpha = 1;
         inventoryGroup.interactable = true;
         inventoryGroup.blocksRaycasts = true;
+		AudioController.instance.PlaySoundFX(soundFX[0]);
     }
 
     public void Hide()
@@ -97,5 +100,8 @@ public class InventoryUIController : MonoBehaviour
         inventoryGroup.alpha = 0;
         inventoryGroup.interactable = false;
         inventoryGroup.blocksRaycasts = false;
-    }
+		AudioController.instance.PlaySoundFX(soundFX[1]);
+	}
+
+
 }

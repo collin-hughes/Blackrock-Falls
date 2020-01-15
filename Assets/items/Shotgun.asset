@@ -27,3 +27,6 @@ MonoBehaviour:
   bullet: {fileID: 1051411550441708682, guid: b4677fce2ec1d0444bf97ed5eb38dd3f, type: 3}
   muzzleFlash: {fileID: 684612723298914848, guid: 18696f538e61dd24c92aa80a128fe6c5,
     type: 3}
+  soundFX:
+  - {fileID: 8300000, guid: cc5c846c1aba0724088fb5f5f306d049, type: 3}
+  - {fileID: 0}
