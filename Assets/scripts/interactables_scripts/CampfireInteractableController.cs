@@ -9,6 +9,6 @@ public class CampfireInteractableController :  BaseInteractableItemController
 	public override void OnInteract()
 	{
 		Debug.Log("Something happens");
-        MainUIController.instance.SetText(interactionMessage[0], readTime);
+		HUDController.instance.SetText(interactionMessage[0], readTime);
 	}
 }

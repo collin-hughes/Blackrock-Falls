@@ -51,7 +51,7 @@ public class PlayerActionController : MonoBehaviour
 
 				catch
 				{
-
+					HUDController.instance.SetText("I don't have a weapon");
 				}
 			}
 
@@ -64,7 +64,7 @@ public class PlayerActionController : MonoBehaviour
 
 				catch
 				{
-
+					HUDController.instance.SetText("I don't have anything to reload");
 				}
 			}
 

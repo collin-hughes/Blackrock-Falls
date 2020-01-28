@@ -29,6 +29,10 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private GameObject uiCanvas;
 
+	[SerializeField] private AudioClip sceneMusic;
+
+	[SerializeField] private Texture2D combatCursor;
+
     private MainUIController uiController;
 
 	private GameState currentState;
@@ -50,52 +54,65 @@ public class GameController : MonoBehaviour
         pauseMenuActive = false;
         hudActive = true;
 		currentState = GameState.playing;
-}
+		AudioController.instance.PlayMusic(sceneMusic);
+		Cursor.SetCursor(combatCursor, Vector2.zero, CursorMode.Auto);
+	}
 
     // Update is called once per frame
     private void Update()
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            inventoryMenuActive = false;
-            hudActive = false;
-            //pauseMenuActive = !pauseMenuActive;
-
-            if (isPaused)
+			if (pauseMenuActive && !inventoryMenuActive)
             {
-                UnpauseGame();
-
-            }
-
-            else
-            {
-                PauseGame();
+				Cursor.SetCursor(combatCursor, Vector2.zero, CursorMode.Auto);
+				UnpauseGame();
 				currentState = GameState.playing;
+				Time.timeScale = 1.0f;
 			}
 
-            MainUIController.instance.PauseScreen();
-        }
-
-        else if (Input.GetButtonDown("Inventory"))
-        {
-            inventoryMenuActive = !inventoryMenuActive;
-            hudActive = false;
-            pauseMenuActive = false;
-
-            if (isPaused)
-            {
-                UnpauseGame();
-            }
+			else if(pauseMenuActive && inventoryMenuActive)
+			{
+				MainUIController.instance.InventoryScreen(inventoryMenuActive);
+				UnpauseGame();
+			}
 
             else
             {
-                PauseGame();
-            }
+				Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+				currentState = GameState.paused;
+				Time.timeScale = 0.0f;
+			}
+
+			pauseMenuActive = !pauseMenuActive;
+			MainUIController.instance.PauseScreen(pauseMenuActive, inventoryMenuActive);
+		}
+
+        else if (Input.GetButtonDown("Inventory") && !pauseMenuActive)
+        {
+            inventoryMenuActive = !inventoryMenuActive;
+            pauseMenuActive = false;
+		
+            if (inventoryMenuActive)
+            {
+				Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+				currentState = GameState.paused;
+				Time.timeScale = 0.0f;
+				AudioController.instance.PlaySoundFX(InventoryUIController.instance.soundFX[1]);
+
+			}
+
+            else
+           {
+				Cursor.SetCursor(combatCursor, Vector2.zero, CursorMode.Auto);
+				currentState = GameState.playing;
+				Time.timeScale = 1.0f;
+				AudioController.instance.PlaySoundFX(InventoryUIController.instance.soundFX[0]);
+			}
 
             MainUIController.instance.InventoryScreen(inventoryMenuActive);
         }
     }
-
 	public GameState GetCurrentState()
 	{
 		return currentState;
@@ -103,15 +120,12 @@ public class GameController : MonoBehaviour
 
     private void PauseGame()
     {
-        Time.timeScale = 0.0f;
-        isPaused = true;
-		currentState = GameState.paused;
+
 	}
 
     private void UnpauseGame()
     {
-        Time.timeScale = 1.0f;
-        isPaused = false;
-		currentState = GameState.playing;
-    }
+		
+	}
 }
+

@@ -14,8 +14,12 @@ public class PlayerInventoryController : MonoBehaviour
             Debug.LogWarning("More than one instance of Inventory found!");
         }
 
-        instance = this;
-		DontDestroyOnLoad(this);
+		else
+		{
+			instance = this;
+			DontDestroyOnLoad(this);
+		}
+		
 	}
     #endregion
 
@@ -36,7 +40,7 @@ public class PlayerInventoryController : MonoBehaviour
         {
             if (items.Count >= space)
             {
-                MainUIController.instance.SetText("I don't have enough room for that.");
+                HUDController.instance.SetText("I don't have enough room for that.");
                 return false;
             }
 
@@ -86,13 +90,9 @@ public class PlayerInventoryController : MonoBehaviour
     {
         Item tempItem;
 
-        Debug.Log("I got called");
-
         tempItem = slot.item;
 
         Remove(slot.item);
-
-        //equipedLight = slot.item;
 
         if (equipedLight != null)
         {

@@ -19,9 +19,10 @@ public class PlayerStatusController : MonoBehaviour
     private bool isDead;
     private MainUIController uiController;
 
+	public GameObject blood;
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
         //uiController = mainUI.GetComponent<MainUIController>();
 
@@ -41,8 +42,7 @@ public class PlayerStatusController : MonoBehaviour
 					isSprinting = true;
 					stamina -= staminaLossRate;
 
-					//uiController.UpdateStatus(uiController.staminaBar, stamina, MAX_STAMINA);
-					MainUIController.instance.UpdateStatus(MainUIController.instance.staminaBar, stamina, MAX_STAMINA);
+					HUDController.instance.UpdateStamina(stamina, MAX_STAMINA);
 				}
 
 				else
@@ -54,22 +54,24 @@ public class PlayerStatusController : MonoBehaviour
 			else
 			{
 				isSprinting = false;
-
+			
 				if (stamina < MAX_STAMINA)
 				{
 					stamina += staminaGainRate;
-
-					MainUIController.instance.UpdateStatus(MainUIController.instance.staminaBar, stamina, MAX_STAMINA);
+			
+					HUDController.instance.UpdateStamina(stamina, MAX_STAMINA);
 				}
 			}
 		}
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, RaycastHit2D attackRay)
     {
         health -= damage;
 
-		MainUIController.instance.UpdateStatus(MainUIController.instance.healthBar, health, MAX_HEALTH);
+		Instantiate(blood, attackRay.point, transform.rotation);
+
+		HUDController.instance.UpdateHealth(health, MAX_HEALTH);
 
         if (health <= 0)
         {

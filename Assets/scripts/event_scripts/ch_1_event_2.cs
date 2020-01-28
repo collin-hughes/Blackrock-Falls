@@ -17,18 +17,18 @@ public class ch_1_event_2 : BaseInteractableItemController
 		{
 			EventController.instance.events[eventLinker].SetCompleted();
 
-			MainUIController.instance.SetText(interactionMessage[0], readTime);
+			HUDController.instance.SetText(interactionMessage[0], readTime);
 
 			hiddenPath.GetComponent<BoxCollider2D>().enabled = false;
 
 			spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, .85f);
 
-			MainUIController.instance.UpdateTask(newTaskName);
+			HUDController.instance.UpdateTask(newTaskName);
 		}
 
 		else
 		{
-			MainUIController.instance.SetText(interactionMessage[1]);
+			HUDController.instance.SetText(interactionMessage[1]);
 		}
         
     }

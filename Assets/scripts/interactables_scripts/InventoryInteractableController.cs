@@ -15,8 +15,7 @@ public class InventoryInteractableController : BaseInteractableItemController
 
     override public void OnInteract()
     {
-        MainUIController.instance.SetText(interactionMessage[0], readTime);
-        //inventoryManager.OpenInventory(name, inventory);
+		HUDController.instance.SetText(interactionMessage[0], readTime);
     }
 
 }

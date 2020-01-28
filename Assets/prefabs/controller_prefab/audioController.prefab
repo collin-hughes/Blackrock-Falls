@@ -179,6 +179,13 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 096d4e7d862b0eb4f9832f1f6a8df7df, type: 2}
   musicController: {fileID: 5856468537574999237}
   playerSoundsController: {fileID: 5856468538456132736}
+  footsteps:
+  - {fileID: 8300000, guid: fbb7af02e59261a4b9c23d9b4d6e1cde, type: 3}
+  - {fileID: 8300000, guid: 034ae0e178af0274c951a07f488284aa, type: 3}
+  - {fileID: 8300000, guid: 1b0daecdafa5390478ca73fe8f6b04fd, type: 3}
+  - {fileID: 8300000, guid: 2ce6b456f69f4e04382fd5421e495603, type: 3}
+  - {fileID: 8300000, guid: 14602b62a520b9c4da7424ac7430ba78, type: 3}
+  - {fileID: 8300000, guid: e82b10a1e824b5c4eaf8a5f1d7edf788, type: 3}
 --- !u!1 &5856468538456132743
 GameObject:
   m_ObjectHideFlags: 0

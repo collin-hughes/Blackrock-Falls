@@ -29,6 +29,7 @@ public class LoadingController : MonoBehaviour
 	{
 		Studio110Utils.UIUtilites.TogglePanels(ref HUD, ref LoadScreen);
 
+		//AudioController.instance.PlayMusic(loadingMusic);
 		AudioController.instance.PlayMusic(loadingMusic);
 
 		StartCoroutine(LoadAsync(sceneIndex));
@@ -44,6 +45,7 @@ public class LoadingController : MonoBehaviour
 
 			yield return null;
 		}
-	}
 
+		AudioController.instance.StopMusic();
+	}
 }

@@ -50,6 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   uiCanvas: {fileID: 0}
+  sceneMusic: {fileID: 0}
+  combatCursor: {fileID: 2800000, guid: 91f70348c4a4ee64686c3f2f2ee4c437, type: 3}
   isPaused: 0
   pauseMenuActive: 0
   inventoryMenuActive: 0
@@ -123,3 +125,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HUD: {fileID: 0}
   LoadScreen: {fileID: 0}
+  loadingMusic: {fileID: 0}

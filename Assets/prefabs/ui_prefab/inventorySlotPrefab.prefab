@@ -72,7 +72,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 6dfcca6baf747544e8223a9265534bbc, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -374,51 +374,51 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2310234423232039959, guid: bfa7b36b0e181c8429221bdcbd8b4760,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310234423232039959, guid: bfa7b36b0e181c8429221bdcbd8b4760,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310234423232039959, guid: bfa7b36b0e181c8429221bdcbd8b4760,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310234423232039959, guid: bfa7b36b0e181c8429221bdcbd8b4760,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310234423558882938, guid: bfa7b36b0e181c8429221bdcbd8b4760,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310234423558882938, guid: bfa7b36b0e181c8429221bdcbd8b4760,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310234423558882938, guid: bfa7b36b0e181c8429221bdcbd8b4760,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310234423558882938, guid: bfa7b36b0e181c8429221bdcbd8b4760,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2807415036799806179, guid: bfa7b36b0e181c8429221bdcbd8b4760,
         type: 3}
       propertyPath: inventorySlot
       value: 
       objectReference: {fileID: 1182363102618697261}
+    - target: {fileID: 2310234423232039959, guid: bfa7b36b0e181c8429221bdcbd8b4760,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310234423232039959, guid: bfa7b36b0e181c8429221bdcbd8b4760,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310234423232039959, guid: bfa7b36b0e181c8429221bdcbd8b4760,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310234423232039959, guid: bfa7b36b0e181c8429221bdcbd8b4760,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310234423558882938, guid: bfa7b36b0e181c8429221bdcbd8b4760,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310234423558882938, guid: bfa7b36b0e181c8429221bdcbd8b4760,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310234423558882938, guid: bfa7b36b0e181c8429221bdcbd8b4760,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310234423558882938, guid: bfa7b36b0e181c8429221bdcbd8b4760,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfa7b36b0e181c8429221bdcbd8b4760, type: 3}
 --- !u!1 &7301010698794914371 stripped
@@ -449,6 +449,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310234423232039959, guid: 0e00be9fe9d5e01489a9ac9f24c36f00,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310234423232039959, guid: 0e00be9fe9d5e01489a9ac9f24c36f00,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310234423232039959, guid: 0e00be9fe9d5e01489a9ac9f24c36f00,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310234423232039959, guid: 0e00be9fe9d5e01489a9ac9f24c36f00,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2310234422202428522, guid: 0e00be9fe9d5e01489a9ac9f24c36f00,
         type: 3}
@@ -555,31 +575,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2807415036799806179, guid: 0e00be9fe9d5e01489a9ac9f24c36f00,
-        type: 3}
-      propertyPath: inventorySlot
-      value: 
-      objectReference: {fileID: 1182363102618697261}
-    - target: {fileID: 2310234423232039959, guid: 0e00be9fe9d5e01489a9ac9f24c36f00,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310234423232039959, guid: 0e00be9fe9d5e01489a9ac9f24c36f00,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310234423232039959, guid: 0e00be9fe9d5e01489a9ac9f24c36f00,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310234423232039959, guid: 0e00be9fe9d5e01489a9ac9f24c36f00,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2310234423558882938, guid: 0e00be9fe9d5e01489a9ac9f24c36f00,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -620,6 +615,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2807415036799806179, guid: 0e00be9fe9d5e01489a9ac9f24c36f00,
+        type: 3}
+      propertyPath: inventorySlot
+      value: 
+      objectReference: {fileID: 1182363102618697261}
     - target: {fileID: 2310234423003763217, guid: 0e00be9fe9d5e01489a9ac9f24c36f00,
         type: 3}
       propertyPath: m_textInfo.characterCount

@@ -18,29 +18,19 @@ public class MainUIController : MonoBehaviour
 
         instance = this;
     }
-    #endregion
+	#endregion
 
-    [SerializeField] private GameObject inventoryScreen;
-    [SerializeField] private GameObject pauseScreen;
-    [SerializeField] private GameObject deathScreen;
-    [SerializeField] private GameObject mainHUD;
+	[SerializeField] private GameObject inventoryScreen;
+	[SerializeField] private GameObject pauseScreen;
+	[SerializeField] private GameObject deathScreen;
+	[SerializeField] private GameObject mainHUD;
 
-    //[SerializeField] private GameObject player;
 
-    [SerializeField] public Slider healthBar;
-    [SerializeField] public Slider staminaBar;
-    [SerializeField] public TextMeshProUGUI ammoCounter;
-	[SerializeField] public TextMeshProUGUI taskList;
 
-	private TextMeshProUGUI infobox;
-   // private PlayerStatusController playerStatus;
-
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
-        infobox = mainHUD.transform.Find("infoText").GetComponent<TextMeshProUGUI>();
-        //playerStatus = player.GetComponent<PlayerStatusController>();
-    }
+	}
 
     // Update is called once per frame
     void Update()
@@ -48,54 +38,47 @@ public class MainUIController : MonoBehaviour
         
     }
 	
-	public void UpdateTask(string text)
-	{
-		taskList.SetText(text);
-	}
-
-    public void SetText(string text, float timeout=3.0f)
-    {
-        infobox.CrossFadeAlpha(1.0f, 0.0f, false);
-        infobox.SetText(text);
-        infobox.CrossFadeAlpha(0.0f, timeout, false);
-    }
+	
 
     public void InventoryScreen(bool state)
     {
         if(!state)
         {
             InventoryUIController.instance.Hide();
+			HUDController.instance.Show();
         }
 
         else
         {
             InventoryUIController.instance.Show();
-        }
-
-        MainHUD();
+			HUDController.instance.Hide();
+		}
     }
 
-    public void PauseScreen()
+    public void PauseScreen(bool state, bool inventoryState)
     {
-        pauseScreen.SetActive(!pauseScreen.activeSelf);
-        MainHUD();
-    }
+		if (!state && !inventoryState)
+		{
+			PauseMenuController.instance.Hide();
+			HUDController.instance.Show();
+		}
+
+		else if (!state)
+		{
+			PauseMenuController.instance.Hide();
+		}
+
+		else
+		{
+			InventoryUIController.instance.Hide();
+			HUDController.instance.Hide();
+			PauseMenuController.instance.Show();
+		}
+	}
 
     public void MainHUD()
     {
-        mainHUD.SetActive(!mainHUD.activeSelf);
+		//mainHUD.SetActive(!mainHUD.activeSelf);
+		//mainHUD.GetComponent<CanvasGroup>().alpha = 1;
     }
-
-    public void UpdateStatus(Slider slider, int value, int maxValue)
-    {
-        slider.value = ((float)value / (float)maxValue) * 100;
-    }
-
-    public void UpdateAmmoCounter(int loadedAmmo, int maxAmmo)
-    {
-        ammoCounter.SetText(loadedAmmo + " / " + maxAmmo);
-    }
-
-	
-
 }

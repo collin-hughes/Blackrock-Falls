@@ -21,19 +21,19 @@ public class CarInteractableController : BaseInteractableItemController
 				EventController.instance.events[eventLinker].SetCompleted();
 				interacted = true;
 				headlights.SetActive(true);
-				MainUIController.instance.SetText(interactionMessage[0], readTime);
-				MainUIController.instance.UpdateTask(newTaskName);
+				HUDController.instance.SetText(interactionMessage[0], readTime);
+				HUDController.instance.UpdateTask(newTaskName);
 			}
 
 			else
 			{
-				MainUIController.instance.SetText(interactionMessage[1]);
+				HUDController.instance.SetText(interactionMessage[1]);
 			}
 		}
 
 		else
 		{
-			MainUIController.instance.SetText(interactionMessage[2]);
+			HUDController.instance.SetText(interactionMessage[2]);
 		}
     }
 }

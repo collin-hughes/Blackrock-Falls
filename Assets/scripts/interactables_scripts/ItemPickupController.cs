@@ -26,13 +26,13 @@ public class ItemPickupController : BaseInteractableItemController
     {
         bool wasPickedUp;
 
-        MainUIController.instance.SetText(interactionMessage[0], readTime);
+		HUDController.instance.SetText(interactionMessage[0], readTime);
         wasPickedUp = PlayerInventoryController.instance.Add(item);
 
 		if(eventLinker > -1)
 		{
 			EventController.instance.events[eventLinker].SetCompleted();
-			MainUIController.instance.UpdateTask(newTaskName);
+			HUDController.instance.UpdateTask(newTaskName);
 		}
 
         if(wasPickedUp)

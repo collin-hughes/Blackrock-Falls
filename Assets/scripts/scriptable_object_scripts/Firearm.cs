@@ -44,7 +44,7 @@ public class Firearm : Item
 
 						loadedRound--;
 
-						MainUIController.instance.UpdateAmmoCounter(loadedRound, magazineSize);
+						HUDController.instance.UpdateAmmoCounter(loadedRound, magazineSize);
 
 						newBullet[0] = Instantiate(bullet, PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.transform.rotation);
 						fireArray[0] = Physics2D.Raycast(PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.raycastSource.transform.up, range, layerMask);
@@ -70,7 +70,7 @@ public class Firearm : Item
 					{
 						loadedRound--;
 
-						MainUIController.instance.UpdateAmmoCounter(loadedRound, magazineSize);
+						HUDController.instance.UpdateAmmoCounter(loadedRound, magazineSize);
 
 						newBullet[0] = Instantiate(bullet, PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.transform.rotation * Quaternion.Euler(0f, 0f, 5f));
 						fireArray[0] = Physics2D.Raycast(PlayerActionController.instance.raycastSource.transform.position, Quaternion.AngleAxis(5f, PlayerActionController.instance.raycastSource.transform.forward) * PlayerActionController.instance.raycastSource.transform.up, range, layerMask);
@@ -114,12 +114,12 @@ public class Firearm : Item
 
     public override void OnEquip()
     {
-        MainUIController.instance.UpdateAmmoCounter(loadedRound, magazineSize);
+		HUDController.instance.UpdateAmmoCounter(loadedRound, magazineSize);
     }
 
 	public override void OnReload()
 	{
 		loadedRound = magazineSize;
-		MainUIController.instance.UpdateAmmoCounter(loadedRound, magazineSize);
+		HUDController.instance.UpdateAmmoCounter(loadedRound, magazineSize);
 	}
 }

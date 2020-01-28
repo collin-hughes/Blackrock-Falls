@@ -12,6 +12,6 @@ public class SignInteractableController : BaseInteractableItemController
     // Update is called once per frame
     public override void OnInteract()
     {
-        MainUIController.instance.SetText(interactionMessage[0], readTime);
+		HUDController.instance.SetText(interactionMessage[0], readTime);
     }
 }
