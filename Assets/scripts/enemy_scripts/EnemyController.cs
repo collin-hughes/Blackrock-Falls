@@ -13,5 +13,11 @@ public class EnemyController : MonoBehaviour
 		isAggro = true;
 		moveController.StartFollow();
 	}
+
+	public void OffAggro()
+	{
+		isAggro = false;
+		moveController.StopFollow();
+	}
 }
 

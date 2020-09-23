@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - Inventory
+  - Collider
   layers:
   - Default
   - TransparentFX
@@ -22,10 +23,10 @@ TagManager:
   - Interactable
   - Bullets
   - Enemies
-  - 
-  - 
-  - 
-  - 
+  - Mask
+  - Collider
+  - Behind Mask
+  - Dark
   - 
   - 
   - 
@@ -54,6 +55,9 @@ TagManager:
     locked: 0
   - name: Items
     uniqueID: 305296585
+    locked: 0
+  - name: FOV Mask
+    uniqueID: 1889246493
     locked: 0
   - name: Player
     uniqueID: 562848867

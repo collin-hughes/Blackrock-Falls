@@ -59,6 +59,11 @@ public class UseMenuController : MonoBehaviour
         
         HideMenu();
     }
+	public void Use()
+	{
+		inventorySlotController.item.OnUse();
+		inventorySlotController.ClearSlot();
+	}
 
     public void Equip()
     {

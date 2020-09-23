@@ -17,7 +17,9 @@ public class Item : ScriptableObject
     public bool isEquiped = false;
     public bool isDefaultItem = false;
 
-    public string itemName = "New Item";
+	public float range;
+
+	public string itemName = "New Item";
     public Sprite icon = null;
     public ItemTag itemTag;
     public EquipableTag equipableTag;

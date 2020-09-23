@@ -18,16 +18,20 @@ public class PlayerLineOfSightController : MonoBehaviour
 
         instance = this;
     }
-    #endregion
+	#endregion
 
-    [SerializeField] private Light2D forwardLineOfSight;
-    [SerializeField] private Light2D peripheralLineOfSight;
+	[SerializeField] private PlayerFieldOfViewController fovForward;
+	[SerializeField] private PlayerFieldOfViewController fovPeripheral;
 
-    [SerializeField] private float baseIntensity;
+	public void Start()
+	{
+		//PlayerInventoryController.instance.equipedLight.GetLightingMaterial();
+	}
 
-    public void SetIntensity(float intensityMultiplier)
+	public void SetMaterial(Material lightingMaterial)
     {
-        forwardLineOfSight.intensity = baseIntensity * intensityMultiplier;
-        peripheralLineOfSight.intensity = baseIntensity * intensityMultiplier;
-    }
+		fovForward.SetMaterial(lightingMaterial);
+		fovPeripheral.SetMaterial(lightingMaterial);
+
+	}
 }

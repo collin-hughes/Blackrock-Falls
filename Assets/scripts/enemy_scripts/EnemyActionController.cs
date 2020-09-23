@@ -11,19 +11,20 @@ public class EnemyActionController : MonoBehaviour
 
 	private int layerMask = 1 << 9;
 
-	public void OnCollisionEnter2D(Collision2D collision)
+	public void OnTriggerEnter2D(Collider2D collision)
 	{
 		RaycastHit2D attackRay;
 
 		if (collision.transform.tag == "Player")
 		{
 			attackRay = Physics2D.Raycast(attackSource.transform.position, -transform.up, range, layerMask);
+			Debug.Log("In range");
 			
 			if(attackRay)
 			{
 				Debug.Log("Chomp");
 				collision.transform.GetComponent<PlayerStatusController>().TakeDamage(damage, attackRay);
-				collision.transform.GetComponent<Rigidbody2D>().AddForce(-transform.up * 50);
+				collision.transform.GetComponent<Rigidbody2D>().AddForce(-transform.up * 250);
 			}
 
 

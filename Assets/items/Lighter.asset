@@ -7,17 +7,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6f9b4ac8506b6a4798243e37d048c5d, type: 3}
   m_Name: Lighter
   m_EditorClassIdentifier: 
   isEquiped: 0
   isDefaultItem: 0
+  range: 0
   itemName: Lighter
   icon: {fileID: 21300000, guid: caa3b29f9022ca64b8e7fb1ccc241afa, type: 3}
   itemTag: 1
   equipableTag: 1
   worldItem: {fileID: 1917741904395363495, guid: 62abeab0876f4ec41b0b5beccc8669bd,
     type: 3}
-  intensityModifier: 1.5
+  lightMaterial: {fileID: 2100000, guid: aa70f70054bdc204ba46766f01882a4d, type: 2}

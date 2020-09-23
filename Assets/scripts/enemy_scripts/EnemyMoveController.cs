@@ -23,6 +23,12 @@ public class EnemyMoveController : MonoBehaviour
 			StartCoroutine("UpdatePath");
 	}
 
+	public void StopFollow()
+	{
+		if (GameState.playing == GameController.instance.GetCurrentState())
+			StopCoroutine("UpdatePath");
+	}
+
 	IEnumerator UpdatePath()
 	{
 		if (Time.timeSinceLevelLoad < .3f)

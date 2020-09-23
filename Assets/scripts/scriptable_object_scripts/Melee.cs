@@ -6,7 +6,6 @@ using UnityEngine;
 public class Melee : Item
 {
 	public int damage;
-	public float range;
 
 	private int layerMask = 1<<14;
 
@@ -17,10 +16,8 @@ public class Melee : Item
 		attackRay = Physics2D.Raycast(PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.raycastSource.transform.up, range, layerMask);
 		Debug.DrawRay(PlayerActionController.instance.raycastSource.transform.position, PlayerActionController.instance.raycastSource.transform.up * range);
 
-		Debug.Log(attackRay.transform.name);
 		if (attackRay)
 		{
-			Debug.Log("Attack hit " + attackRay.transform.name);
 			attackRay.transform.gameObject.GetComponent<EnemyStatusController>().TakeDamage(damage, attackRay);
 		}
 	}

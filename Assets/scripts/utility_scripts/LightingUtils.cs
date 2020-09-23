@@ -10,12 +10,14 @@ public class LightingUtils : MonoBehaviour
     [SerializeField] private float maxFlicker;
     [SerializeField] private float rateDampening;
 
-    private Light2D lightSource;
+	private EnvironmentalLight lightSource;
+
+	private float intensity;
 
     // Start is called before the first frame update
     void Start()
     {
-        lightSource = GetComponent<Light2D>();
+        lightSource = GetComponent<EnvironmentalLight>();
 
         StartCoroutine(DoFlicker());
     }
@@ -30,7 +32,7 @@ public class LightingUtils : MonoBehaviour
     {
         while(true)
         {
-            lightSource.intensity = Random.Range(minFlicker, maxFlicker);
+            lightSource.viewDistance = Random.Range(minFlicker, maxFlicker);
 
             yield return new WaitForSeconds(rateDampening);
         }

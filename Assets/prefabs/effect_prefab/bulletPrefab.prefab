@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1051411550441708682}
   - component: {fileID: 2700588138680097403}
   - component: {fileID: 901414613644206413}
-  - component: {fileID: -6940963971609578144}
   - component: {fileID: 7031644855934359791}
   m_Layer: 13
   m_Name: bulletPrefab
@@ -49,6 +48,7 @@ LineRenderer:
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -74,6 +74,19 @@ LineRenderer:
   m_SortingLayer: 6
   m_SortingOrder: 0
   m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   m_Parameters:
@@ -143,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7aeed2d483796b479fcab045d9fd75c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.25
+  moveSpeed: 1.5
 --- !u!60 &901414613644206413
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -181,20 +194,6 @@ PolygonCollider2D:
       - {x: 0.025881363, y: -0.04244421}
       - {x: 0.044055425, y: -0.024611391}
       - {x: 0.051072717, y: 0.0019579846}
---- !u!114 &-6940963971609578144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5739154162912344935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cb1e15a4d9827e4b825c951fe1e9bdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyedVersion: {fileID: 0}
-  objectHealth: 0
 --- !u!50 &7031644855934359791
 Rigidbody2D:
   serializedVersion: 4

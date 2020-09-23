@@ -47,6 +47,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -100,6 +101,7 @@ MonoBehaviour:
   readTime: 3
   eventParent: -1
   eventLinker: -1
+  newTaskName: 
   item: {fileID: 11400000, guid: 8c15a85cdf527ca4f97deb190eca4c39, type: 2}
 --- !u!61 &4852964640916228807
 BoxCollider2D:

@@ -9,8 +9,10 @@ public class PlayerMovementController : MonoBehaviour
 	[SerializeField] private Animator playerAnimator;
 	[SerializeField] private GameObject playerLegs;
 
-    private Vector2 moveInput;
-	private Controls input;
+	[SerializeField] private PlayerFieldOfViewController fovForward;
+	[SerializeField] private PlayerFieldOfViewController fovPeripheral;
+
+	private Vector2 moveInput;
     private Rigidbody2D rigidbody;
 
     private PlayerStatusController playerStatus;
@@ -28,21 +30,11 @@ public class PlayerMovementController : MonoBehaviour
     {
 		if (GameState.playing == GameController.instance.GetCurrentState())
 		{
-			if (playerStatus.isSprinting)
-			{
-				moveInput = new Vector2(Input.GetAxisRaw("Horizontal") * sprintSpeed * Time.deltaTime, Input.GetAxisRaw("Vertical") * sprintSpeed * Time.deltaTime);
-
-				if(moveInput.x != 0 || moveInput.y != 0)
-				{
-					playerAnimator.SetInteger("state", 2);
-				}	
-			}
-
-			else
+			if (!playerStatus.isSprinting)
 			{
 				moveInput = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime);
 
-				if (moveInput.x != 0 || moveInput.y != 0)
+				if (moveInput.magnitude > 0f)
 				{
 					playerAnimator.SetInteger("state", 1);
 				}
@@ -50,6 +42,16 @@ public class PlayerMovementController : MonoBehaviour
 				else
 				{
 					playerAnimator.SetInteger("state", 0);
+				}
+			}
+
+			else
+			{
+				moveInput = new Vector2(Input.GetAxisRaw("Horizontal") * sprintSpeed * Time.deltaTime, Input.GetAxisRaw("Vertical") * sprintSpeed * Time.deltaTime);
+
+				if (moveInput.magnitude > 0f)
+				{
+					playerAnimator.SetInteger("state", 2);
 				}
 			}
 		}
@@ -73,10 +75,17 @@ public class PlayerMovementController : MonoBehaviour
 		{
 			playerLegs.transform.eulerAngles = new Vector3(0, 0, 0);
 		}
+
+		fovForward.SetOrigin(transform.position);
+		fovPeripheral.SetOrigin(transform.position);
 	}
 
     private void FixedUpdate()
     {
+		if(moveInput.magnitude > 1f)
+		{
+			moveInput = moveInput.normalized;
+		}
         rigidbody.MovePosition(rigidbody.position + moveInput);
     }
 }

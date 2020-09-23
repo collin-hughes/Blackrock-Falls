@@ -10,10 +10,11 @@ public class Firearm : Item
 	};
 
 	public WeaponClass weaponType;
+	public AmmoType ammoType;
 
 	public int damage;
     public int magazineSize;
-	public int range;
+
 
 	[System.NonSerialized]
 	private int loadedRound;
@@ -40,8 +41,6 @@ public class Firearm : Item
 			{
 				case (WeaponClass.single):
 					{
-						Debug.Log("Pew");
-
 						loadedRound--;
 
 						HUDController.instance.UpdateAmmoCounter(loadedRound, magazineSize);
@@ -53,14 +52,9 @@ public class Firearm : Item
 
 						for (int i = 0; i < 1; i++)
 						{
-							Debug.Log(fireArray[i].transform.name);
-
 							if (fireArray[i])
 							{
-								Debug.Log("Bullet " + i + " hit " + fireArray[i].transform.name);
 								fireArray[i].transform.gameObject.GetComponent<EnemyStatusController>().TakeDamage(damage, fireArray[i]);
-								//Instantiate(fireArray[i].transform.gameObject.GetComponent<EnemyStatusController>().blood, fireArray[i].point, Quaternion.LookRotation(new Vector2(fireArray[i].point.x - PlayerActionController.instance.raycastSource.transform.position.x,
-								//																																					fireArray[i].point.y - PlayerActionController.instance.raycastSource.transform.position.y)));
 							}
 						}
 						break;
@@ -90,11 +84,8 @@ public class Firearm : Item
 						{
 							if (fireArray[i])
 							{
-								Debug.Log("Bullet " + i + " hit " + fireArray[i].transform.name);
 								Destroy(newBullet[i]);
 								fireArray[i].transform.gameObject.GetComponent<EnemyStatusController>().TakeDamage(damage, fireArray[i]);
-								//Instantiate(fireArray[i].transform.gameObject.GetComponent<EnemyStatusController>().blood, fireArray[i].point, Quaternion.LookRotation(new Vector2(fireArray[i].point.x - PlayerActionController.instance.raycastSource.transform.position.x,
-								//																																					fireArray[i].point.y - PlayerActionController.instance.raycastSource.transform.position.y)));
 							}
 						}
 						
@@ -102,7 +93,6 @@ public class Firearm : Item
 					}
 				default:
 					{
-						Debug.Log("Do nothing.");
 						break;
 					}
 
@@ -119,7 +109,8 @@ public class Firearm : Item
 
 	public override void OnReload()
 	{
-		loadedRound = magazineSize;
+		loadedRound = PlayerAmmoController.instance.Reload(ammoType, loadedRound, magazineSize);
+
 		HUDController.instance.UpdateAmmoCounter(loadedRound, magazineSize);
 	}
 }

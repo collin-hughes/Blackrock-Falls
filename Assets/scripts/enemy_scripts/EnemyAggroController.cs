@@ -11,6 +11,7 @@ public class EnemyAggroController : MonoBehaviour
 		if(collision.gameObject.tag == "Player" && !enemyController.isAggro)
 		{
 			enemyController.OnAggro();
+			Debug.Log("aggro");
 		}
 	}
 }

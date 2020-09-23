@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
+	private Vector2 startingPosition;
 
     private Rigidbody2D rb2d;
     //Transform endPoint;
@@ -15,13 +16,19 @@ public class BulletController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
 
         Destroy(gameObject, 2f);
+
+		startingPosition = transform.position;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
 		rb2d.MovePosition(transform.position + transform.up * moveSpeed);
-		//rb2d.MovePosition(transform.position + transform.TransformDirection(transform.up));
+		
+		if(Vector2.Distance(transform.position, startingPosition) > PlayerInventoryController.instance.equipedWeapon.range)
+		{
+			Destroy(gameObject);
+		}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

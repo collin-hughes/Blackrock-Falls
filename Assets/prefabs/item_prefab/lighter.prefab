@@ -47,6 +47,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -99,7 +100,8 @@ MonoBehaviour:
   - I picked up a lighter.
   readTime: 3
   eventParent: -1
-  eventLinker: 0
+  eventLinker: -1
+  newTaskName: 
   item: {fileID: 11400000, guid: 174ddb7f1c828c540b4f699ce9a0faa4, type: 2}
 --- !u!61 &1917741904395363491
 BoxCollider2D:

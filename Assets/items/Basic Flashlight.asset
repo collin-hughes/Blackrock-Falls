@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEquiped: 0
   isDefaultItem: 0
+  range: 0
   itemName: Basic Flashlight
   icon: {fileID: 21300000, guid: e766329f0da30a042a186d17d74d1255, type: 3}
   itemTag: 1
   equipableTag: 1
   worldItem: {fileID: 1917741904395363495, guid: 10111903e92be694a8243f6354f8c960,
     type: 3}
-  intensityModifier: 2
+  lightMaterial: {fileID: 2100000, guid: 46b3a5d9b60802743bb77cfcaf5def2e, type: 2}

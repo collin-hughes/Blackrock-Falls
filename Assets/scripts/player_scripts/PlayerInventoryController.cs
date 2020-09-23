@@ -17,7 +17,6 @@ public class PlayerInventoryController : MonoBehaviour
 		else
 		{
 			instance = this;
-			DontDestroyOnLoad(this);
 		}
 		
 	}

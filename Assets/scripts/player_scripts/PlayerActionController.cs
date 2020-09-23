@@ -23,7 +23,6 @@ public class PlayerActionController : MonoBehaviour
 	[SerializeField] private float useDistance;
 	[SerializeField] private LayerMask interactableMask;
 
-
     private PlayerStatusController playerStatus;
 
     // Start is called before the first frame update
@@ -44,28 +43,12 @@ public class PlayerActionController : MonoBehaviour
 
 			if (Input.GetButtonDown("Attack"))
 			{
-				try
-				{
 					PlayerInventoryController.instance.equipedWeapon.OnUse();
-				}
-
-				catch
-				{
-					HUDController.instance.SetText("I don't have a weapon");
-				}
 			}
 
 			else if (Input.GetButtonDown("Reload"))
 			{
-				try
-				{
 					PlayerInventoryController.instance.equipedWeapon.OnReload();
-				}
-
-				catch
-				{
-					HUDController.instance.SetText("I don't have anything to reload");
-				}
 			}
 
 			else if (Input.GetButtonDown("Interact"))
@@ -91,7 +74,6 @@ public class PlayerActionController : MonoBehaviour
                 interactRay.transform.gameObject.GetComponent<InventoryInteractableController>().OnInteract();
             }
 
-            Debug.Log(interactRay.transform.name);
             Debug.DrawRay(raycastSource.transform.position, transform.up);
         }
 

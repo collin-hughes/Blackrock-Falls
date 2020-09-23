@@ -45,10 +45,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121,16 +122,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 457457267497185999, guid: 488020d91557d6648aa0e5105c715391,
-        type: 3}
-      propertyPath: m_Name
-      value: tentPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 457457267497185999, guid: 488020d91557d6648aa0e5105c715391,
-        type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 343909443306005474, guid: 488020d91557d6648aa0e5105c715391,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -185,6 +176,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457457267497185999, guid: 488020d91557d6648aa0e5105c715391,
+        type: 3}
+      propertyPath: m_Name
+      value: tentPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 457457267497185999, guid: 488020d91557d6648aa0e5105c715391,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6812139855138543397, guid: 488020d91557d6648aa0e5105c715391,
         type: 3}

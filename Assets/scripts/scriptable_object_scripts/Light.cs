@@ -5,10 +5,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Light", menuName = "Inventory/Light")]
 public class Light : Item
 {
-    public float intensityModifier;
+	public Material lightMaterial;
+
+	public void Awake()
+	{
+		OnEquip();
+	}
 
     public override void OnEquip()
     {
-        PlayerLineOfSightController.instance.SetIntensity(intensityModifier);
+        PlayerLineOfSightController.instance.SetMaterial(lightMaterial);
     }
+
+	public Material GetLightingMaterial()
+	{
+		return lightMaterial;
+	}
 }
